@@ -1,0 +1,199 @@
+/*-----------------------------------*\
+	Globel 
+\*-----------------------------------*/
+*{
+	box-sizing: border-box;
+	position: relative;
+}
+h2,p{
+	margin: 0;
+}
+
+
+/*-----------------------------------*\
+	Component 
+\*-----------------------------------*/
+
+/* btn */
+.btn{
+	display: inline-block;
+	color: #666;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 16px 32px;
+	border-radius: 5px;
+	font-weight: 400;
+	border: 2px solid #666;
+	transition: all 0.3s;
+}
+.btn:hover{
+	background-color: #666;
+	color: #fff;
+}
+
+/* image-container */
+.image-container{
+	width: 100%;
+}
+.image-container:before{
+	content: "";
+	display: block;
+	width: 100%;
+	padding-top: 133.333333%;
+	/*2:3*/
+}
+.image-ratio-1-1:before{
+	padding-top: 100%;
+}
+
+
+.image-container .image{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+/* hero 區域*/ 
+.hero{
+	padding-top: 200px;
+	padding-bottom: 200px;
+}
+
+/* product-item */
+.product-item{
+	margin-bottom: 320px;
+}
+.product-item:last-child{
+	margin-bottom: 0;
+}
+.product-item .title{
+	font-size: 64px;
+	color: #484848;
+	font-weight: 600;
+	margin-bottom: 32px;
+}
+.product-item .title--left{
+	margin-left: -64px;
+	/*用margin-left用負的方式 做重疊的排版*/
+}
+.product-item .para{
+	font-size: 20px;
+	line-height: 32px;
+	color: #484848;
+	font-weight: 300;
+	letter-spacing: 1px;
+	margin-bottom: 48px;
+}
+
+
+/*-----------------------------------*\
+	Animation 動畫
+\*-----------------------------------*/
+
+.product-item.animated .image-container .image{
+
+	animation: ani-fadeIn 0.5s 0.6s forwards;
+	opacity: 0;
+}
+
+@keyframes ani-fadeIn{
+	/*fadeIn淡入*/
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+
+.product-item.animated .image-container:after{
+	/*.product-item.animated =.product-item在動畫撥放時 所出現的樣式*/
+	/*.animated 狀態*/
+	/*去抓裡面.image-container的偽元素*/
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color:  #484848;
+	width: 0;
+	height: 100%;
+	animation: 
+		ani-drawLine 0.3s,
+		ani-fillWidth 0.2s 0.3s,
+		ani-blockOut 0.2s 0.5s;
+		/*播放時間 空格 delay時間*/
+}
+
+
+
+@keyframes ani-drawLine{
+	/*drawLine 畫線*/
+
+	0%{
+		width: 8px;
+		height: 0%;
+	}
+	100%{
+		width: 8px;
+		height: 100%;
+	}
+}
+@keyframes ani-fillWidth{
+	/*fillWidth 填滿寬度*/
+	0%{
+		width: 8px;
+	}
+	100%{
+		width: 100%;
+	}
+}
+@keyframes ani-blockOut{
+	/*blockOut 區塊消失*/
+	0%{
+		left: inherit;
+		/*把left設定還原 寫回預設值 取消掉*/
+		right: 0;
+		/*再重新定位*/
+		/*left和right選一個就好*/
+		width: 100%; 
+	}
+	100%{
+		left: inherit;
+		/*把left設定還原*/
+		right: 0;
+		width: 0%;
+	}
+}
+
+.product-item.animated .title{
+	animation: ani-fadeInUp 0.5s 0.5s backwards;
+	/*backwards 當關鍵影格最一開始是透明度0的狀態*/
+}
+.product-item.animated .para{
+	animation: ani-fadeInUp 0.5s 0.65s backwards;
+}
+.product-item.animated .btn{
+	animation: ani-fadeInUp 0.5s 0.8s backwards;
+}
+
+
+@keyframes ani-fadeInUp{
+	/*ani-fadeInUp向上淡入*/
+	0%{
+		transform: translate(0,50px);
+		/*transform單純自己的變形*/
+		/*y的50是向下*/
+		opacity: 0;
+	}
+	100%{
+		transform: translate(0,0);
+		/*回到自己的位置*/
+		opacity: 1;
+	}
+}

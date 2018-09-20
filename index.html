@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="wrapper">
+
+		<!-- Start group -->
+		<!-- 商品卡片區域 -->
+		<div class="hero">
+			<div class="container">
+				<div class="product-item animated">
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<!-- 12分之6 佔一半 -->
+							<div class="image-container rellax">
+								<div class="image" style="background-image: url('images/img1.jpg');"></div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<h2 class="title title--left">
+								<span>Luminaires, mobilier design et objets de décoration</span>
+							</h2>
+							<p class="para">
+								<!-- para段落 -->
+								<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime aperiam accusantium fugiat, atque unde expedita laboriosam recusandae neque dolore velit, ipsum dicta doloremque voluptatem animi obcaecati, fuga saepe! Tempore, voluptatum.</span>
+							</p>
+							<a href="#!" class="btn">EN SAVOIR PLUS</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item wow">
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<h2 class="title">
+								<span>Luminaires, mobilier design </span>
+							</h2>
+							<p class="para">
+								<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime aperiam accusantium fugiat, atque unde expedita laboriosam recusandae neque dolore velit, ipsum dicta doloremque voluptatem animi obcaecati, fuga saepe! Tempore, voluptatum.</span>
+							</p>
+							<a href="#!" class="btn">EN SAVOIR PLUS</a>
+						</div>
+						<div class="col-md-6">
+							<div class="image-container image-ratio-1-1 rellax">
+								<div class="image" style="background-image: url('images/img2.jpg');"></div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<div class="product-item wow">
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<div class="image-container rellax">
+								<div class="image" style="background-image: url('images/img3.jpg');"></div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<h2 class="title title--left">
+								<span>Luminaires, mobilier design et objets de décoration</span>
+							</h2>
+							<p class="para">
+								<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime aperiam accusantium fugiat, atque unde expedita laboriosam recusandae neque dolore velit, ipsum dicta doloremque voluptatem animi obcaecati, fuga saepe! Tempore, voluptatum.</span>
+							</p>
+							<a href="#!" class="btn">EN SAVOIR PLUS</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End group -->
+		
+	</div>
+</body>
+<script src="js/wow.min.js"></script>
+<script src="js/rellax.min.js"></script>
+<script>
+	// wow.js initialize
+	wow = new WOW({
+		offset: 200
+	});
+	wow.init();
+
+	// rellax initialize
+	var rellax = new Rellax('.rellax', {
+		center: true
+	});
+</script>
+</html>
